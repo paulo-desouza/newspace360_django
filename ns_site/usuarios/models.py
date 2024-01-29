@@ -41,8 +41,6 @@ class UsuarioManager(BaseUserManager):
     
 
 
-
-
 class Usuario(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(
@@ -69,9 +67,9 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     )
 
     USERNAME_FIELD = "email"
-    objects = UsuarioManager 
+    objects = UsuarioManager()
 
-    
+
 
     class Meta:
         verbose_name = "Usuario"
