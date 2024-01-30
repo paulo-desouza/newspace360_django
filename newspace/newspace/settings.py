@@ -17,11 +17,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 ]
 
 INSTALLED_APPS += [
     'basic_user.apps.BasicUserConfig',
     'content.apps.ContentConfig',
+    'end_user.apps.EndUserConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -86,7 +89,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'America/New_York'
 

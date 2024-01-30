@@ -4,6 +4,8 @@ from django.contrib.auth.models import (
     AbstractBaseUser,
     PermissionsMixin,
 )
+from django.contrib.auth import password_validation
+from django import forms
 
 class BasicUserManager(BaseUserManager):
 
@@ -15,7 +17,7 @@ class BasicUserManager(BaseUserManager):
             )
         
         basic_user.is_active = True
-        basic_user.is_staff = False
+        basic_user.is_staff  = False
         basic_user.is_superuser = False
 
         basic_user.set_password(password)
@@ -34,7 +36,6 @@ class BasicUserManager(BaseUserManager):
         basic_user.is_active = True
         basic_user.is_staff = True
         basic_user.is_superuser = True 
-
         basic_user.set_password(password)
         basic_user.save()
         return basic_user
@@ -43,38 +44,42 @@ class BasicUserManager(BaseUserManager):
 class BasicUser(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(
-        verbose_name = "User Email",
+        verbose_name = "Email do Usuário",
         max_length = 194,
         unique=True,
     )
 
 
     is_active = models.BooleanField(
-        verbose_name = "User is active",
+        verbose_name = "Usuário está ATIVO",
         default =  True,
     )
 
     is_staff = models.BooleanField(
-        verbose_name="User is from development team",
-        default=False,
-    
-    )
-
-    is_superuser = models.BooleanField(
-        verbose_name="User is a superuser",
+        verbose_name="Usuário é um empregado nosso",
         default = False,
     )
 
+    is_superuser = models.BooleanField(
+        verbose_name="Usuário é um administrador",
+        default = False,
+    )
 
     USERNAME_FIELD = "email"
     objects = BasicUserManager()
 
-
-
     class Meta:
-        verbose_name = "User"
-        verbose_name_plural = "Users"
+        verbose_name = "Usuário"
+        verbose_name_plural = "Usuário"
         db_table = "user"
+
+    def clean(self):
+        if self.password:
+            try:
+                password_validation.validate_password(self.password)
+
+            except forms.ValidationError as error:
+                raise forms.ValidationError('You need a stronger password.')
 
 
     def __str__(self):
