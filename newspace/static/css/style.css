@@ -1,10 +1,3 @@
-/*
-Author URI: http://webthemez.com/
-Note: 
-Licence under Creative Commons Attribution 3.0 
-Do not remove the back-link in this web template 
--------------------------------------------------------*/
-
 @import url('http://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:400,600,700'); 
 @import url('font-awesome.css');  
 @import url('animate.css');
@@ -15,7 +8,9 @@ body {
 	font-weight:300;
 	line-height:1.6em;
 	color:#F9F9F9;
+	
 }
+
 
 a:active {
 	outline:0;
@@ -51,6 +46,7 @@ h1,h2, h3, h4, h5, h6 {
 
 #wrapper{
 	width:100%;
+	height: 100%;
 	margin:0;	
 	padding:0;
 }
@@ -356,7 +352,7 @@ text-align: center;
 -webkit-border-radius: 50%;
 border-radius: 50%;
 display: inline-table;
-}
+}box-sizing
 .skill-home h2 {
 padding-top: 20px;
 font-size: 36px;
@@ -953,9 +949,7 @@ ul.link-list li{
 	padding:2px 0 2px 0;
 	list-style:none;
 }
-footer{
-background:#363839;
-}
+
 footer ul.link-list li a{
 	color:#ffffff;
 }
@@ -994,13 +988,6 @@ aside .widgetheading {
 	padding-bottom: 9px;
 }
 
-footer .widgetheading {
-	position: relative;
-}
-
-footer .widget .social-network {
-	position:relative;
-}
 
 
 #bottom .widget .widgetheading span, aside .widget .widgetheading span, footer .widget .widgetheading span {	
@@ -1336,10 +1323,7 @@ float: left;
 }
 
   
-footer{
-	padding:50px 0 0 0;
-	color:#ffffff;
-}
+
 
 footer a {
 	color:#ffffff;
@@ -1539,7 +1523,7 @@ article img.pull-right, article .align-right{
 
 
 	
-	footer .widget form  input#appendedInputButton {
+	.widget form  input#appendedInputButton {
 		  display: block;
 		  width: 91%;
 		  -webkit-border-radius: 4px 4px 4px 4px;
@@ -1547,7 +1531,7 @@ article img.pull-right, article .align-right{
 				  border-radius: 4px 4px 4px 4px;
 	}
 	
-	footer .widget form  .input-append .btn {
+	.widget form  .input-append .btn {
 		  display: block;
 		  width: 100%;
 		  padding-right: 0;
@@ -1721,4 +1705,4 @@ padding-top: 12px;
 
 }
 
- 
+

@@ -3,9 +3,15 @@ from content.models import Content
 
 class EndUser(models.Model):
 
-    client_name = models.CharField(
-        verbose_name = "Nome do seu Cliente",
-        max_length = 50,
+    first_name = models.CharField(
+        verbose_name = "Primeiro Nome do seu Cliente",
+        max_length = 15,
+        
+    )
+
+    last_name =models.CharField(
+        verbose_name = "Sobrenome do seu cliente",
+        max_length = 15,
         
     )
 

@@ -8,8 +8,6 @@ from django.contrib.auth import password_validation
 from django import forms
 
 class BasicUserManager(BaseUserManager):
-
-
     def create_user(self, email, password):
     # End User Account
         basic_user = self.model(
