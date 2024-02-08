@@ -4,7 +4,7 @@
 
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8"> 
 <title>NewSpace360 </title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="" />
@@ -40,18 +40,21 @@
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
                         <li>
-                            <form action="{% url 'index' %}">
+                            <form method="post" action="{% url 'index' %}">
+                                {% csrf_token %}
                                 <button type="submit" class="btn btn-link">Home</button>
                             </form>
                         </li> 
 						<li>
                             
-                            <form action="{% url 'about' %}">
+                            <form method="post" action="{% url 'about' %}">
+                                {% csrf_token %}
                                 <button type="submit" class="btn btn-link">About</button>
                             </form>                        
                         </li>
                         <li>
-                            <form action="{% url 'customer_index'%}">
+                            <form method="post" action="{% url 'customer_index'%}">
+                                {% csrf_token %}
                                 <button type="submit" class="btn btn-link">My Content</button>
                             </form>                        
                         </li>
@@ -69,19 +72,22 @@
                     <ul class="nav navbar-nav">
                             
                         <li>
-                            <form action="{% url 'index' %}">
+                            <form method="post" action="{% url 'index' %}">
+                                {% csrf_token %}
                                 <button type="submit" class="btn btn-link">Home</button>
                             </form>
                         </li> 
                         <li>
                             
-                            <form action="{% url 'about' %}">
+                            <form method="post" action="{% url 'about' %}">
+                                {% csrf_token %}
                                 <button type="submit" class="btn btn-link">About</button>
                             </form>                        
                         </li>
                 
                         <li>
-                            <form action="{% url 'login' %}">
+                            <form method="post" action="{% url 'login' %}">
+                                {% csrf_token %}
                                 <button type="submit" class="btn btn-link">Log In</button>
                             </form>
                         </li>

@@ -34,5 +34,5 @@ class EndUser(models.Model):
         db_table = "end_user"
 
     def __str__(self):
-        return self.client_name
+        return f"{self.first_name} {self.last_name}"
     

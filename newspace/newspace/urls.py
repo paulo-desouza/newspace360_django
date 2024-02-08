@@ -1,12 +1,11 @@
 from django.contrib import admin
+from django.contrib.staticfiles.urls import static
+from . import settings
 from django.urls import path
 from end_user.views import customer_index
 from content.views import serve_content, index, about
 from django.contrib.auth import views as auth_views
  
-
-
-
 urlpatterns = [
     
     path('admin/', admin.site.urls), 
@@ -27,5 +26,4 @@ urlpatterns = [
                 template_name = "logout.html",
             ),
             name="logout"), # logout 
-
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

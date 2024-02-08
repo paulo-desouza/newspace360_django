@@ -2,29 +2,40 @@
 
 {% block content %}
 
-    <section id="inner-headline">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="pageTitle">Welcome to your page, {{ end_user.first_name }}! </h2>
-                </div>
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="pageTitle">Which project would you like to view, {{ end_user.first_name }}? </h2>
             </div>
         </div>
-	</section>
+    </div>
+</section>
 
-    <section id="content">
-        <div class="container">
-            
-            <h1 id="blacktext">Which house would you like to view today?</h1>
-            <br><br>
+<section id="content">
+    <div class="container text-center">
 
+        <div class="row justify-content-center g-4">
             {% for c in content_list %}
-                <a href="{% url 'contents' id=c.id %}">{{ c.address }}</a>
+            <div class="col" style="display: inline-block;" >
+
+                <div class="card" style="width: 18rem; ">
+                    <img src="{{ c.photo1.url }}" class="card-img-top" alt="House Preview">
+                    <div class="card-body">
+                        <h5 id="blacktext" class="card-title">{{ c.address }}</h5>
+
+                        <a href="{% url 'contents' id=c.id %}" class="btn btn-primary">Open Project</a>
+                    </div>
+                </div>
+
+            </div>
             {% endfor %}
-            <br><br>
-
-
         </div>
-    </section>
+    </div>
+
+
+
+
+</section>
 
 {% endblock content %}

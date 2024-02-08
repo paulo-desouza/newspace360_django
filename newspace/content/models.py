@@ -12,11 +12,17 @@ class Content(models.Model):
         verbose_name = "Codigo da Matterport"
     )
 
-    photo1 = models.ImageField(upload_to ='photos/', blank=True,)
+    photo1 = models.ImageField(
+        upload_to ='photos/', blank=True,
+        verbose_name= "Primeira foto (Usada como icone do produto)")
 
-    photo2 = models.ImageField(upload_to ='photos/', blank=True,)
+    photo2 = models.ImageField(
+        upload_to ='photos/', blank=True,
+        verbose_name= "Segunda Foto")
 
-    photo3 = models.ImageField(upload_to ='photos/', blank=True,)
+    photo3 = models.ImageField(
+        upload_to ='photos/', blank=True,
+        verbose_name= "Terceira Foto")
 
 
     video_link1 = models.CharField(
